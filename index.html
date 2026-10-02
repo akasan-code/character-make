@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>キャラ育成シミュレーションRPG - プロトタイプ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header class="game-header">
+      <div>
+        <h1>魔神王討伐計画</h1>
+        <p class="subtitle">キャラ育成シミュレーションRPG Prototype</p>
+      </div>
+      <div class="party-status">
+        パーティー <strong id="partyCount">0 / 4</strong>
+      </div>
+    </header>
+
+    <main>
+      <!-- 街 -->
+      <section id="townScreen" class="screen active">
+        <div class="panel town-panel">
+          <h2>魔神迷宮都市</h2>
+          <p>冒険者を集め、魔神王討伐の準備を進めます。</p>
+
+          <div id="partyPreview" class="party-preview"></div>
+
+          <div class="town-menu">
+            <button id="recruitButton" class="menu-button">冒険者を募集する</button>
+            <button class="menu-button disabled" disabled>訓練（未実装）</button>
+            <button class="menu-button disabled" disabled>ダンジョン（未実装）</button>
+            <button class="menu-button disabled" disabled>転職（未実装）</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 募集 -->
+      <section id="recruitScreen" class="screen">
+        <div class="panel">
+          <div class="screen-heading">
+            <div>
+              <h2>冒険者募集</h2>
+              <p>4名の候補者が現れました。気に入った冒険者を1人選びます。</p>
+            </div>
+            <button class="secondary-button" data-back="townScreen">街へ戻る</button>
+          </div>
+
+          <div id="candidateList" class="candidate-grid"></div>
+
+          <div class="screen-actions">
+            <button id="rerollButton" class="secondary-button">再募集（テスト）</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- キャラメイク -->
+      <section id="makeScreen" class="screen">
+        <div class="panel character-sheet">
+          <div class="screen-heading">
+            <div>
+              <h2>冒険者登録</h2>
+              <p>能力値を整え、職業・外見・名前を決めます。</p>
+            </div>
+            <button id="backToRecruitButton" class="secondary-button">候補者へ戻る</button>
+          </div>
+
+          <div class="sheet-top">
+            <div id="selectedImagePreview" class="large-image-placeholder"></div>
+            <div class="identity">
+              <div class="info-row"><span>種族</span><strong id="makeRace"></strong></div>
+              <div class="info-row"><span>出自</span><strong id="makeBackground"></strong></div>
+              <div class="info-row"><span>レベル</span><strong>1</strong></div>
+              <div class="info-row"><span>HP</span><strong id="makeHp"></strong></div>
+            </div>
+          </div>
+
+          <div class="sheet-section">
+            <div class="section-title">
+              <h3>能力値</h3>
+              <div class="bonus-points">残りボーナス：<strong id="remainingBonus">0</strong> pt</div>
+            </div>
+            <div id="statList" class="stat-list"></div>
+          </div>
+
+          <div class="sheet-section">
+            <div class="section-title">
+              <h3>職業</h3>
+              <span class="hint">条件を満たした職業だけ選択できます</span>
+            </div>
+            <div id="jobList" class="job-grid"></div>
+          </div>
+
+          <div class="sheet-section">
+            <div class="section-title">
+              <h3>画像</h3>
+              <span class="hint">用意された画像から選択</span>
+            </div>
+            <div id="imageList" class="image-grid"></div>
+          </div>
+
+          <div class="sheet-section">
+            <h3>名前</h3>
+            <div class="name-row">
+              <input id="nameInput" type="text" maxlength="20" placeholder="冒険者の名前">
+              <span id="nameError" class="error"></span>
+            </div>
+          </div>
+
+          <div class="screen-actions">
+            <button id="completeCharacterButton" class="primary-button">この冒険者を登録する</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- パーティー -->
+      <section id="partyScreen" class="screen">
+        <div class="panel">
+          <div class="screen-heading">
+            <div>
+              <h2>パーティー</h2>
+              <p>最大4名まで冒険者を加入させることができます。</p>
+            </div>
+            <button class="secondary-button" data-back="townScreen">街へ戻る</button>
+          </div>
+
+          <div id="partyList" class="party-list"></div>
+
+          <div class="screen-actions">
+            <button id="partyRecruitButton" class="primary-button">冒険者を募集する</button>
+            <button id="emptyPartyButton" class="danger-button">テスト用：パーティーを空にする</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
