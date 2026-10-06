@@ -360,9 +360,10 @@ function renderParty() {
     const mini = document.createElement("div");
     mini.className = "party-mini";
     mini.innerHTML = `
-      <div class="mini-avatar">👤</div>
-      <strong>${escapeHtml(character.name)}</strong>
-      <div class="tag">${character.race}</div>
+      <div class="mini-avatar">
+        <img src="${character.image}" alt="${escapeHtml(character.name)}">
+      </div>
+      <strong>${escapeHtml(character.name)}</strong><br>
       <div class="tag">${character.job}</div>
     `;
     townPreview.appendChild(mini);
