@@ -356,18 +356,33 @@ function renderParty() {
   townPreview.innerHTML = "";
   townPreview.classList.toggle("empty", state.party.length === 0);
 
-  state.party.forEach(character => {
+  for (let i = 0; i < 4; i++) {
     const mini = document.createElement("div");
     mini.className = "party-mini";
-    mini.innerHTML = `
-      <div class="mini-avatar">
-        <img src="${character.image}" alt="${escapeHtml(character.name)}">
-      </div>
-      <strong>${escapeHtml(character.name)}</strong><br>
-      <div class="tag">${character.job}</div>
-    `;
+
+    const character = state.party[i];
+
+    if (character) {
+      mini.innerHTML = `
+        <div class="mini-avatar">
+          <img src="${character.image}" alt="${escapeHtml(character.name)}">
+        </div>
+
+        <div class="mini-info">
+          <strong>${escapeHtml(character.name)}</strong>
+          <div>Lv ${character.level}</div>
+          <div>${escapeHtml(character.job)}</div>
+        </div>
+      `;
+    } else {
+      mini.innerHTML = `
+        <div class="mini-empty">
+          空き
+        </div>
+      `;
+    }
     townPreview.appendChild(mini);
-  });
+  };
 
   const list = $("#partyList");
   list.innerHTML = "";

@@ -21,19 +21,34 @@
     <main>
       <!-- 街 -->
       <section id="townScreen" class="screen active">
-        <div class="panel town-panel">
-          <h2>魔神迷宮都市</h2>
-          <p>冒険者を集め、魔神王討伐の準備を進めます。</p>
 
-          <div id="partyPreview" class="party-preview"></div>
+        <!-- 上側：シーン -->
+        <div id="sceneArea">
 
-          <div class="town-menu">
-            <button id="recruitButton" class="menu-button">冒険者を募集する</button>
-            <button class="menu-button disabled" disabled>訓練（未実装）</button>
-            <button class="menu-button disabled" disabled>ダンジョン（未実装）</button>
-            <button class="menu-button disabled" disabled>転職（未実装）</button>
+          <div id="sceneBackground">
+            <img src="images/background/town.png" alt="街">
           </div>
+
+          <div id="messagePanel">
+            <div id="messageText">
+              冒険者たちが集まる街。
+            </div>
+
+            <div id="sceneButtons">
+              <button id="recruitButton">募集</button>
+              <button id="trainingButton">訓練</button>
+              <button id="dungeonButton">ダンジョン</button>
+              <button id="jobChangeButton">転職</button>
+            </div>
+          </div>
+
         </div>
+
+        <!-- 下側：常時パーティ -->
+        <div id="partyArea">
+          <div id="partyPreview"></div>
+        </div>
+
       </section>
 
       <!-- 募集 -->

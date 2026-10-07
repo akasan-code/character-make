@@ -502,24 +502,19 @@ h3 {
 }
 
 .party-mini {
-  min-height: 105px;
-  padding: 12px;
-  background: #2a2831;
-  border: 1px solid var(--border);
-  border-radius: 7px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 80px;
+  border: 1px solid #333;
+  padding: 8px;
 }
 
-.party-mini .mini-avatar{
-  width: 75px;
-  height: 75px;
-  margin: 0 auto 7px;
-  border-radius: 10%;
-  display: grid;
-  place-items: center;
-  background: #41384d;
-  color: var(--muted);
+.mini-avatar {
+  width: 80px;
+  height: 80px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .mini-avatar img {
@@ -527,6 +522,12 @@ h3 {
   height: 100%;
   object-fit: cover;
   object-position: top;
+}
+
+.mini-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .party-card {
@@ -603,4 +604,58 @@ h3 {
   .screen-heading {
     flex-direction: column;
   }
+}
+
+#sceneArea {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+}
+
+#sceneBackground {
+  width: 100%;
+  height: 100%;
+}
+
+#sceneBackground img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#messagePanel {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: 30px;
+
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.65);
+  color: white;
+  border-radius: 16px;
+}
+
+#messageText {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+#sceneButtons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#partyArea {
+  padding: 10px;
+}
+
+#partyPreview {
+  width: 80%;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  gap: 10px;
 }
