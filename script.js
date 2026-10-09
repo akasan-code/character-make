@@ -47,9 +47,9 @@ const STAT_LABELS = {
 // 画像を追加する場合は要素を増やす
 const IMAGE_OPTIONS = {
   "平人": ["01_a.png", "02_a.png", "03_a.png", "04_a.png", "05_a.png", "06_a.png", "07_a.png", "08_a.png", "09_a.png", "10_a.png", "11_a.png", "12_a.png", "13_a.png", "14_a.png", "15_a.png", "16_a.png", "17_a.png", "18_a.png", "19_a.png", "20_a.png", "21_a.png", "22_a.png", "23_a.png", "24_a.png"],
-  "翼人": ["01_a.png", "02_a.png", "03_a.png"],
+  "翼人": ["01_a.png", "02_a.png", "03_a.png", "04_a.png", "05_a.png", "06_a.png", "07_a.png", "08_a.png", "09_a.png", "10_a.png", "11_a.png", "12_a.png", "13_a.png", "14_a.png", "15_a.png", "16_a.png", "17_a.png", "18_a.png", "19_a.png", "20_a.png", "21_a.png", "22_a.png"],
   "洞人": ["01_a.png", "02_a.png", "03_a.png", "04_a.png", "05_a.png", "06_a.png", "07_a.png", "08_a.png", "09_a.png", "10_a.png", "11_a.png", "12_a.png", "13_a.png", "14_a.png", "15_a.png", "16_a.png", "17_a.png", "18_a.png", "19_a.png", "20_a.png", "21_a.png"],
-  "森人": ["01_a.png", "02_a.png", "03_a.png"]
+  "森人": ["01_a.png", "02_a.png", "03_a.png", "04_a.png", "05_a.png", "06_a.png", "07_a.png", "08_a.png", "09_a.png", "10_a.png", "11_a.png", "12_a.png", "13_a.png", "14_a.png", "15_a.png", "16_a.png", "17_a.png", "18_a.png", "19_a.png", "20_a.png", "21_a.png", "22_a.png"]
 };
 
 // ゲームの状態の初期設定
